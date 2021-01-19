@@ -78,7 +78,7 @@ def to_camel_case(underscore_str):
             "alreadyCamel"
     """
 
-    splited_string = underscore_str.lower().split("_")
+    splited_string = underscore_str.split("_")
     if not splited_string:
         return ""
     elif len(splited_string) == 1:
@@ -88,6 +88,7 @@ def to_camel_case(underscore_str):
 
     for string in splited_string:
         if string != '':
+            string = string.lower()
             if camelcase_str != '':
                 camelcase_str += string.capitalize()
             else:
